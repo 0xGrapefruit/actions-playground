@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: troubleshooting
+        run: |
+          git remote -v
+          git branch -a
+
       - run: npm ci --no-save
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
