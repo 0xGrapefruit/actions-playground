@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 12.x
 
+      - uses: actions/checkout@v3
+        ref: stage
+
       - name: validate before release
         run: |
           npm ci --no-save
@@ -25,9 +28,7 @@ jobs:
         env:
           CI: true
 
-      - uses: actions/checkout@v3
-        ref: stage
+      - name: push to stage
         run: |
-          git remote set-url origin git@github.com:0xGrapefruit/actions-playground.git
           git rebase master stage
           git push origin +stage
