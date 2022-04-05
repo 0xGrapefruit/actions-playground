@@ -30,4 +30,4 @@ jobs:
         run: |
           git remote set-url origin git@github.com:0xGrapefruit/actions-playground.git
           git rebase master stage
-          git push origin HEAD:stage --force
+          git push origin +stage
