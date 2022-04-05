@@ -17,7 +17,8 @@ jobs:
           node-version: 12.x
 
       - uses: actions/checkout@v3
-        ref: stage
+        with:
+          ref: stage
 
       - name: validate before release
         run: |
