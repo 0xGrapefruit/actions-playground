@@ -25,9 +25,8 @@ jobs:
         env:
           CI: true
 
-      - name: push staging
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        ref: stage
         run: |
           git remote set-url origin git@github.com:0xGrapefruit/actions-playground.git
           git rebase master stage
