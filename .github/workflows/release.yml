@@ -31,5 +31,6 @@ jobs:
 
       - name: push to stage
         run: |
+          git fetch --no-tags --depth=1 origin master
           git rebase master stage
           git push origin +stage
